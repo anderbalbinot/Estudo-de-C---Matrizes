@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+/*Ex. Ler uma matriz 'M' de 5x5, calcular e escrever as seguintes somas:
+a) da linha 3 de M;
+b) da coluna 2 de M;
+c) da diagonal principal;
+d) da diagonal secundária;
+e) de todos os elementos da matriz
+
+*/
+
+int main(){
+    
+    //declaração de variáveis
+    int M[5][5];
+    int linha=0, coluna=0;
+    int linha3=0, coluna2=0, diagprincipal=0, diagsecund=0, todoselementos=0;
+    
+    printf("\n");
+    printf("Digite valores para uma matriz 'M': ");
+    printf("\n");
+
+    for(linha=0; linha<=4;linha++){
+        for(coluna=0;coluna<=4;coluna++){
+            printf("Digite um valor para M[%d][%d]: ", linha, coluna);
+            scanf("%d",&M[linha][coluna]);
+            printf("\n");
+        }
+    }
+
+    printf("A Matriz 'M' eh a seguinte:");
+    for(linha=0;linha<=4;linha++){
+        printf("\n");
+        for(coluna=0;coluna<=4;coluna++){
+            printf("%d  ",M[linha][coluna]);
+        }
+    }
+
+    //cálculo da linha 3:
+    for(linha=2, coluna=0;coluna<=4;coluna++){
+        linha3=M[linha][coluna]+linha3;
+    }
+
+    //cálculo da linha 2:
+    for(coluna=1, linha=0;linha<=4;linha++){
+        coluna2=M[linha][coluna]+coluna2;
+    }    
+
+    //cálculo da diagonal principal:
+    for(linha=0, coluna=0;linha<=4,coluna<=4;linha++, coluna++){
+        diagprincipal=M[linha][coluna]+diagprincipal;
+    }
+
+    //cálculo da diagonal secundária:
+    for(linha=0,coluna=4; linha<=4;linha++,coluna--){
+        diagsecund=M[linha][coluna]+diagsecund;
+    }
+
+    //cálculo de todos os elementos da matriz:
+    for(linha=0;linha<=4;linha++){
+        for(coluna=0;coluna<=4;coluna++){
+           todoselementos=M[linha][coluna]+todoselementos;
+        }
+    }
+
+
+    printf("\n\n");
+    printf("RESULTADOS: \n");
+    printf("A soma da linha 3 eh %d.\n", linha3);
+    printf("A soma da coluna 2 eh %d.\n", coluna2);
+    printf("A soma da diagonal principal eh %d.\n", diagprincipal);
+    printf("A soma da diagonal secundaria eh %d.\n", diagsecund);
+    printf("A soma de todos os elementos eh %d.\n\n", todoselementos);
+
+  return 0;
+}
