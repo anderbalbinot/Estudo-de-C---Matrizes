@@ -1,0 +1,81 @@
+#include <stdio.h>
+
+/*INSTRUÇÕES:
+EXERCÍCIO 16.2 SOBRE MATRIZES
+- Ler duas matrizes A[4][6] e B[4][6] e criar:
+a)Uma matriz S que seja a soma de A e B.
+b) Uma matriz D que seja a diferença de A e B (A - B).
+- Escrever as matrizes S e D após todo o cálculo estar concluído.
+*/
+
+int main(void){
+
+    //declaração das variáveis:
+    int A[4][6], B[4][6];
+    int S[4][6], D[4][6];
+    int linha=0, coluna=0;
+
+    //ler valores de A e B:
+    printf("\n\nDigite as variaveis da Matriz 'A': ");
+    for(linha=0;linha<=3;linha++){
+        for(coluna=0;coluna<=5;coluna++){
+            printf("\nDigite um valor inteiro para A[%d][%d]: ", linha, coluna);
+            scanf("%d", &A[linha][coluna]);
+        }
+    }
+    printf("\n\nDigite as variaveis da Matriz 'B': ");
+    for(linha=0;linha<=3;linha++){
+        for(coluna=0;coluna<=5;coluna++){
+            printf("\nDigite um valor inteiro para B[%d][%d]: ", linha, coluna);
+            scanf("%d", &B[linha][coluna]);
+        }
+    }
+
+    //imprimir as Matrizes A e B:
+    printf("\n\nMatriz 'A': ");
+    for(linha=0;linha<=3;linha++){
+        printf("\n");
+        for(coluna=0;coluna<=5;coluna++){
+            printf("%d ", A[linha][coluna]);
+        }
+    }
+    printf("\n\nMatriz 'B': ");
+    for(linha=0;linha<=3;linha++){
+        printf("\n");
+        for(coluna=0;coluna<=5;coluna++){
+            printf("%d ", B[linha][coluna]);
+        }
+    }
+
+    //cálculo das Matrizes S e D:
+    for(linha=0;linha<=3;linha++){
+        for(coluna=0;coluna<=5;coluna++){
+            S[linha][coluna]=A[linha][coluna]+B[linha][coluna];
+        }
+    }    
+    for(linha=0;linha<=3;linha++){
+        for(coluna=0;coluna<=5;coluna++){
+            D[linha][coluna]=A[linha][coluna]-B[linha][coluna];
+        }
+    } 
+
+    //impressão das matrizes S e D:
+    printf("\n\nMatriz 'S' (Soma das matrizes A e B): ");
+    for(linha=0;linha<=3;linha++){
+        printf("\n");
+        for(coluna=0;coluna<=5;coluna++){
+            printf("%d ", S[linha][coluna]);
+        }
+    }
+    printf("\n\nMatriz 'D' (Diferenca entre as Matrizes A e B): ");
+    for(linha=0;linha<=3;linha++){
+        printf("\n");
+        for(coluna=0;coluna<=5;coluna++){
+            printf("%d ", D[linha][coluna]);
+        }
+    }
+
+    printf("\n\n\n");
+    return 0;
+
+}
