@@ -1,0 +1,114 @@
+#include <stdio.h>
+
+/*INSTRUÇÃO:
+TAREFA 16.3
+Ler uma matriz A de 4x4, calcular e escrever as somas dos elementos marcados com o X. Utilizar estruturas de repetição.
+
+xx..  
+xx..  
+....  
+....  
+
+....
+....
+..xx
+..xx
+
+x...
+xx..
+xxx.
+xxxx
+
+.xxx
+..xx
+...x
+....
+
+*/
+
+
+int main(){
+    int A[4][4];
+    int soma1=0, soma2=0, soma3=0, soma4=0;
+    int linha=0, coluna=0;
+    int contador=0;
+    
+    //ler matriz A:
+    printf("\n\n");
+    printf("Vamos digitar os elementos da matriz 'A': ");
+    printf("\n");
+    for(linha=0; linha<=3; linha++){
+        for(coluna=0;coluna<=3;coluna++){
+            printf("Digite um valor para A[%d][%d]:  ",linha,coluna);
+            scanf("%d\n",&A[linha][coluna]);}
+    }
+
+    /* soma: 
+    xx..  
+    xx..  
+    ....  
+    ....  */
+    for(linha=0; linha<=1; linha++){
+        for(coluna=0; coluna<=1; coluna++){
+            soma1=A[linha][coluna]+soma1;
+        }
+    }
+
+    /* soma: 
+    ....
+    ....
+    ..xx
+    ..xx*/
+    for(linha=2; linha<=3; linha++){
+        for(coluna=2; coluna<=3; coluna++){
+            soma2=A[linha][coluna]+soma2;
+        }
+    }
+
+    /* soma: 
+    x...
+    xx..
+    xxx.
+    xxxx*/
+    for(linha=0, contador=0; linha<=3; linha++, contador++){
+        for(coluna=0; coluna<=contador; coluna++){
+            soma3=A[linha][coluna]+soma3;
+        }        
+    }
+
+    /* soma: 
+    .xxx
+    ..xx
+    ...x
+    ....*/
+    for(linha=0, contador=1; linha<=2; linha++, contador++){
+        for(coluna=contador; coluna<=3; coluna++){
+            soma4=A[linha][coluna]+soma4;
+        }        
+    }
+
+    //impressão da matriz A
+    printf("\n\nMatriz 'A': ");
+    for(linha=0;linha<=3;linha++){
+        printf("\n");
+        for(coluna=0;coluna<=3;coluna++){
+            printf("%d ", A[linha][coluna]);
+        }
+    }
+
+
+    //impressão
+
+
+    //imprimir resultados:
+    printf("\n\nRESULTADOS:");
+    printf("\nSoma da primeira combinacao de elementos da Matriz: %d.", soma1);
+    printf("\nSoma da segunda combinacao de elementos da Matriz: %d.", soma2);
+    printf("\nSoma da terceira combinacao de elementos da Matriz: %d.", soma3);
+    printf("\nSoma da quarta combinacao de elementos da Matriz: %d.", soma4);
+
+    printf("\n\n");
+    return 0;
+}
+
+
