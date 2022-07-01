@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/*16.4.Ler uma matriz D 5 x 5 (considere que não serão informados valores duplicados). A seguir ler um
+número X e escreva uma mensagem indicando se o valor de X existe ou NÃO na matriz.*/
+
+int main(){
+    int D[5][5];
+    int x;
+    int linha, coluna;
+    int booleano=0;
+
+
+    //Ler a matriz D
+    printf("\n\n");
+    printf("Insira valores para a Matriz 'D': ");
+    for(linha=0; linha<=4; linha++){
+        for(coluna=0; coluna<=4; coluna++){
+            printf("\nDigite um valor para D[%d][%d]: ", linha, coluna);
+            scanf("%d",&D[linha][coluna]);
+        }
+    }
+ 
+    //Inserir x
+    printf("\n\nAgora, insira um valor que serah comparado com os valores da Matriz D: ");
+    scanf("%d", &x);
+
+    //ver se x está na matriz utilizando a variável 'booleano'. 
+    //Se booleano=0, então x não está na matriz
+    //Se booleano=1, então x está na matriz
+    for(linha=0; linha<=4; linha++){
+        for(coluna=0; coluna<=4; coluna++){
+            if(x==D[linha][coluna]){
+                booleano=1;
+            }
+            
+        }
+    }
+
+    //imprime o resultado
+    if(booleano==1){
+        printf("\n\n\nRESULTADO: O elemento %d ESTAH presente na matriz 'D'. \n\n", x);
+    }
+    else{
+        printf("\n\n\nRESULTADO: O elemento %d NAUM estah presente na matriz 'D'. \n\n", x);
+    }
+  
+    return 0;
+}
